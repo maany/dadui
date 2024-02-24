@@ -1,12 +1,12 @@
 {
-  "name": "typescript-npm-package",
+  "name": "@maany/dadui",
   "version": "1.0.0",
-  "description": "TypeScript library npm package boilerplate",
-  "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
-  "homepage": "https://github.com/jasonsturges/typescript-npm-package",
+  "description": "A CLI utility to develop DAD UI Kit components",
+  "author": "Mayank Sharma <imptodefeat@gmail.com>",
+  "homepage": "https://github.com/maany/dadui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jasonsturges/typescript-npm-package"
+    "url": "https://github.com/maany/dadui"
   },
   "license": "ISC",
   "keywords": [
@@ -15,13 +15,16 @@
     "package",
     "boilerplate"
   ],
-  "main": "dist/cjs/typescript-npm-package.js",
-  "module": "dist/esm/typescript-npm-package.js",
-  "browser": "dist/browser/typescript-npm-package.js",
+  "main": "dist/cjs/dadui.js",
+  "module": "dist/esm/dadui.js",
+  "browser": "dist/browser/dadui.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "bin":{
+    "dadui": "dist/esm/dadui"
+  },
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
