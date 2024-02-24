@@ -2,6 +2,23 @@
   "name": "@maany/kitui",
   "version": "1.0.0",
   "description": "A CLI utility to develop DAD UI Kit components",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "executable_name": "cli.js",
+    "kitui": "dist/cli.js",
+    "@maany/kitui": "dist/cli.js"
+  },
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "prebuild:types": "rimraf ./dist",
+    "build:types": "tsc -p ./tsconfig.json --outDir build --declaration true && api-extractor run",
+    "predocs": "rimraf ./docs",
+    "docs": "typedoc src --out docs",
+    "clean": "rimraf ./build ./dist ./docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "author": "Mayank Sharma <imptodefeat@gmail.com>",
   "homepage": "https://github.com/maany/kitui",
   "repository": {
@@ -9,32 +26,15 @@
     "url": "https://github.com/maany/kitui"
   },
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "typescript",
     "npm",
     "package",
     "boilerplate"
   ],
-  "main": "src/index.js",
-  "type": "module",
-  "files": [
-    "dist"
-  ],
-  "bin": {
-    "executable_name": "kitui.js",
-    "kitui": "dist/kitui.js",
-    "@maany/kitui": "dist/kitui.js"
-  },
-  "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
-    "prebuild:types": "rimraf ./build",
-    "build:types": "tsc -p ./tsconfig.json --outDir build --declaration true && api-extractor run",
-    "predocs": "rimraf ./docs",
-    "docs": "typedoc src --out docs",
-    "clean": "rimraf ./build ./dist ./docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.19.4",
     "@rollup/plugin-commonjs": "^21.0.1",

@@ -6,11 +6,20 @@ const fs = require('fs');
 const path = require('path');
 
 export default [
-  // browser-friendly UMD build
   {
-    input: "src/cli.ts",
+    input: "src/index.ts",
     output: {
       dir: "dist",
+      plugins: [
+        {
+          name: "create-dist-directory",
+          generateBundle() {
+            if (!fs.existsSync("dist")) {
+              fs.mkdirSync("dist");
+            }
+          },
+        },
+      ],
       format: "es",
       sourcemap: true,
     },
