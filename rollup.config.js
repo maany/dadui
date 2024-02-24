@@ -1,35 +1,31 @@
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
-import pkg from "./package.json";
+import pkg from "./package.json" with { type: "json" };
+import dts from 'rollup-plugin-dts'
 
-const fs = require('fs');
-const path = require('path');
+import fs from "fs";
+import path from "path";
 
 export default [
   {
     input: "src/index.ts",
     output: {
       dir: "dist",
-      plugins: [
-        {
-          name: "create-dist-directory",
-          generateBundle() {
-            if (!fs.existsSync("dist")) {
-              fs.mkdirSync("dist");
-            }
-          },
-        },
-      ],
       format: "es",
       sourcemap: true,
     },
     plugins: [
       resolve(),
+      dts(),
       typescript({ tsconfig: "./tsconfig.json" }),
       {
         name: 'copy-executable-wrapper',
         generateBundle() {
-          fs.copyFileSync(path.resolve(__dirname, `src/${pkg.bin.executable_name}`), path.resolve(__dirname, `dist/${pkg.bin.executable_name}`));
+          // get the directory of this file
+          if (!fs.existsSync("dist")) {
+            fs.mkdirSync("dist");
+          }
+          fs.copyFileSync(path.resolve(`src/${pkg.bin.executable_name}`), path.resolve(`dist/${pkg.bin.executable_name}`));
         }
       }
     ],

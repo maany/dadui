@@ -4,6 +4,9 @@
   "description": "A CLI utility to develop DAD UI Kit components",
   "main": "dist/index.js",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "bin": {
     "executable_name": "cli.js",
     "kitui": "dist/cli.js",
@@ -36,18 +39,16 @@
     "boilerplate"
   ],
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.19.4",
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "@rollup/plugin-typescript": "^8.3.0",
-    "eslint": "^8.8.0",
-    "prettier": "^2.5.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.66.1",
-    "rollup-plugin-shebang-bin": "^0.0.6",
-    "ts-node": "^10.4.0",
-    "tslib": "^2.3.1",
-    "typedoc": "^0.22.11",
-    "typescript": "^4.5.5"
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "@rollup/plugin-typescript": "11.1.6",
+    "eslint": "8.57.0",
+    "prettier": "3.2.5",
+    "rimraf": "5.0.5",
+    "rollup": "4.12.0",
+    "rollup-plugin-dts": "6.1.0",
+    "ts-node": "10.9.2",
+    "tslib": "2.6.2",
+    "typedoc": "0.25.8",
+    "typescript": "5.3.3"
   }
 }
