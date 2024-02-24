@@ -21,6 +21,7 @@
     "dist"
   ],
   "bin": {
+    "executable_name": "kitui.js",
     "kitui": "dist/kitui.js",
     "@maany/kitui": "dist/kitui.js"
   },
