@@ -15,15 +15,14 @@
     "package",
     "boilerplate"
   ],
-  "main": "dist/cjs/kitui.js",
-  "module": "dist/esm/kitui.js",
-  "browser": "dist/browser/kitui.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.js",
+  "type": "module",
   "files": [
     "dist"
   ],
-  "bin":{
-    "kitui": "dist/esm/kitui"
+  "bin": {
+    "kitui": "dist/kitui.js",
+    "@maany/kitui": "dist/kitui.js"
   },
   "scripts": {
     "dev": "rollup -c -w",
@@ -44,6 +43,7 @@
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.66.1",
+    "rollup-plugin-shebang-bin": "^0.0.6",
     "ts-node": "^10.4.0",
     "tslib": "^2.3.1",
     "typedoc": "^0.22.11",
