@@ -1,12 +1,12 @@
 {
-  "name": "@maany/dadui",
+  "name": "@maany/kitui",
   "version": "1.0.0",
   "description": "A CLI utility to develop DAD UI Kit components",
   "author": "Mayank Sharma <imptodefeat@gmail.com>",
-  "homepage": "https://github.com/maany/dadui",
+  "homepage": "https://github.com/maany/kitui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maany/dadui"
+    "url": "https://github.com/maany/kitui"
   },
   "license": "ISC",
   "keywords": [
@@ -15,15 +15,15 @@
     "package",
     "boilerplate"
   ],
-  "main": "dist/cjs/dadui.js",
-  "module": "dist/esm/dadui.js",
-  "browser": "dist/browser/dadui.js",
+  "main": "dist/cjs/kitui.js",
+  "module": "dist/esm/kitui.js",
+  "browser": "dist/browser/kitui.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "bin":{
-    "dadui": "dist/esm/dadui"
+    "kitui": "dist/esm/kitui"
   },
   "scripts": {
     "dev": "rollup -c -w",
