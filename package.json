@@ -2,7 +2,7 @@
   "name": "@maany/kitui",
   "version": "1.0.0",
   "description": "A CLI utility to develop DAD UI Kit components",
-  "main": "dist/index.js",
+  "main": "dist/cli.js",
   "type": "module",
   "engines": {
     "node": ">=18.0.0"
@@ -32,6 +32,7 @@
   "files": [
     "dist"
   ],
+  "types": "dist/index.d.ts",
   "keywords": [
     "typescript",
     "npm",

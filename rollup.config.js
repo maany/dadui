@@ -1,10 +1,10 @@
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import pkg from "./package.json" with { type: "json" };
-import dts from 'rollup-plugin-dts'
 
 import fs from "fs";
 import path from "path";
+import { dts } from "rollup-plugin-dts";
 
 export default [
   {
@@ -16,7 +16,6 @@ export default [
     },
     plugins: [
       resolve(),
-      dts(),
       typescript({ tsconfig: "./tsconfig.json" }),
       {
         name: 'copy-executable-wrapper',
@@ -27,7 +26,17 @@ export default [
           }
           fs.copyFileSync(path.resolve(`src/${pkg.bin.executable_name}`), path.resolve(`dist/${pkg.bin.executable_name}`));
         }
-      }
+      },
     ],
   },
+  {
+    input: "src/index.ts",
+    output: {
+      file: 'dist/index.d.ts',
+      format: "es",
+    },
+    plugins: [
+      dts(),
+    ]
+  }
 ];
